@@ -30,4 +30,5 @@ To watch changes, you can either use a sass compiler or in the terminal enter:
 ## Contribute
 Please file an issue if you think something could be improved. Please submit Pull requests whenever possible.
 
-MIT © [Chantel Laver]()
+## Contributors
+@ChantelSky
