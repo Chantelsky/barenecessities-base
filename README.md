@@ -1,5 +1,5 @@
 # BareNecessities - Open Source Collection of Sass Mixins
-The purose of BareNecessities is to get straight into your project without having to spend all your time searching for useful mixins.
+The purpose of BareNecessities is to get straight into your project without having to spend all your time searching for useful mixins.
 Feel free to fork it and add your own mixins https://github.com/Chantelsky/BareNecessities
 
 ## Installation
