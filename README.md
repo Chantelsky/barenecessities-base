@@ -8,8 +8,6 @@ Contains no content, except for sass mixins and default file structure.
 You will need to run npm install sass and you're good to go.
 To watch changes you can either use a sass compiler (https://prepros.io/) or in the terminal enter sass --watch sass/style.scss:css/style.css
 
-For bigger projects, it is recommended to do file structure of 7-1 (https://itnext.io/structuring-your-sass-projects-c8d41fa55ed4)
-
 ## Code Example
 ```
 /*
