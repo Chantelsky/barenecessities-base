@@ -3,9 +3,11 @@
 */
 
 /*wrapper
+
 Giving the wrapper a width prevents the layout from stretching too wide.
 
 usage: using a wrapper div for elements to be placed inside. then @include wrapper(insert width);
+
 */ 
 
 @mixin wrapper($width) {
@@ -13,37 +15,11 @@ usage: using a wrapper div for elements to be placed inside. then @include wrapp
     margin: auto;
 }
 
-/* flex container
-null means sass will ignore if no values are passed in.
-
-usage: @include flex(direction, wrap, justify);
-*/ 
-
-@mixin flex($disp: flex, $dir:null, $wrap:null, $just:null) {
-    display: $disp;
-    flex-direction: $dir;
-    flex-wrap:$wrap;
-    justify-content: $just;
-}
-
-/* grid mixin
-currently testing how this would work.
-
-usage: @include grid(columns,row, rowgap, colgap or gridgap);
-*/
-
-@mixin grid ($disp: grid, $col,$row, $rowgap:null,$colgap:null, $gridgap:null) {
-    display: $disp;
-    grid-template-columns: $col;
-    grid-template-rows: $row;
-    grid-row-gap: $rowgap;
-    grid-column-gap: $colgap;
-    grid-gap: $gridgap;
-}
 
 /* padding mixin
 
 usage: @include padding(enter px);
+
 */ 
 
 @mixin padding($values) {    
@@ -52,9 +28,12 @@ usage: @include padding(enter px);
     }
 }
 
-/*center a block element without having to worry if there is any top or bottom margin applied
+/*
+center a block element without having to worry if there is any top or bottom margin applied
 
-usage: @include push--auto*/ 
+usage: @include push--auto
+
+*/ 
 
 @mixin push--auto {
     margin: { 
@@ -63,7 +42,10 @@ usage: @include push--auto*/
     }
 }
 
-/* absolute position centering
+/* 
+
+absolute position centering
+
 */
 
 @mixin absCenter {
@@ -74,7 +56,9 @@ usage: @include push--auto*/
 }
 
 /*a mixin for opacity
+
 usage: @include opacity(amount of opacity);
+
 */ 
 
 @mixin opacity($opacity) {
@@ -84,8 +68,11 @@ usage: @include opacity(amount of opacity);
   }
 
 /* Shadow mixin
+
 usage: @include box-shadow(0, 0, 0, 4px, #000, inset);
+
 */
+
 @mixin box-shadow($offset-x, $offset-y, $blur-radius, $spread-radius, $color, $inset: false) {
     @if $inset {
     box-shadow: inset $offset-x $offset-y $blur-radius $spread-radius $color;
@@ -100,6 +87,7 @@ usage: @include box-shadow(0, 0, 0, 4px, #000, inset);
 You must provide at least one parameter to make it work.
 
 usage: @include @box(amount of px you want to use);
+
 */ 
 
 @mixin box-size($width, $height: $width) {
@@ -107,8 +95,46 @@ usage: @include @box(amount of px you want to use);
     height: $height;
 }
 
-/*
-usage: @include mediaQ(insert maxwidth,minwidth); or @include mediaQ(insert maxwidth);
+/* flex container
+
+null means sass will ignore if no values are passed in.
+
+usage: @include flex(direction, wrap, justify);
+
+*/ 
+
+@mixin flex($disp: flex, $dir:null, $wrap:null, $just:null) {
+    display: $disp;
+    flex-direction: $dir;
+    flex-wrap:$wrap;
+    justify-content: $just;
+}
+
+/* grid mixin
+
+currently testing how this would work.
+
+usage: @include grid(columns,row, rowgap, colgap or gridgap);
+
+*/
+
+@mixin grid ($disp: grid, $col,$row, $rowgap:null,$colgap:null, $gridgap:null) {
+    display: $disp;
+    grid-template-columns: $col;
+    grid-template-rows: $row;
+    grid-row-gap: $rowgap;
+    grid-column-gap: $colgap;
+    grid-gap: $gridgap;
+}
+
+/* Media Query
+
+If more than one value is entered then the 2nd if statement will be used.
+
+usage: @include mediaQ(insert maxwidth,minwidth); or @include mediaQ(insert maxwidth) {
+    include what you need to make it responsive here.
+}
+
 */
 
 @mixin mediaQ($arg...) {
@@ -125,7 +151,7 @@ usage: @include mediaQ(insert maxwidth,minwidth); or @include mediaQ(insert maxw
     }
 }
 
-/*css triangle
+/*CSS triangle
 
 you will need to just specify the color, how big you want it and the direction its going to come out of your element
 
