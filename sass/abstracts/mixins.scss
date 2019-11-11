@@ -1,4 +1,6 @@
-/*handles functions, mixins and variables */
+// -----------------------------------------------------------------------------
+// Handles functions, mixins and variables
+// -----------------------------------------------------------------------------
 
 /*wrapper
 Giving the wrapper a width prevents the layout from stretching too wide.
@@ -37,7 +39,7 @@ You must provide at least one parameter to make it work.
 usage: @include @box(amount of px you want to use);
 */ 
 
-@mixin size($width, $height: $width) {
+@mixin box-size($width, $height: $width) {
     width: $width;
     height: $height;
 }
