@@ -13,6 +13,34 @@ usage: using a wrapper div for elements to be placed inside. then @include wrapp
     margin: auto;
 }
 
+/* flex container
+null means sass will ignore if no values are passed in.
+
+usage: @include flex(direction, wrap, justify);
+*/ 
+
+@mixin flex($disp: flex, $dir:null, $wrap:null, $just:null) {
+    display: $disp;
+    flex-direction: $dir;
+    flex-wrap:$wrap;
+    justify-content: $just;
+}
+
+/* grid mixin
+currently testing how this would work.
+
+usage: @include grid(columns,row, rowgap, colgap or gridgap);
+*/
+
+@mixin grid ($disp: grid, $col,$row, $rowgap:null,$colgap:null, $gridgap:null) {
+    display: $disp;
+    grid-template-columns: $col;
+    grid-template-rows: $row;
+    grid-row-gap: $rowgap;
+    grid-column-gap: $colgap;
+    grid-gap: $gridgap;
+}
+
 /*a mixin for opacity
 usage: @include opacity(amount of opacity);
 */ 
@@ -23,7 +51,19 @@ usage: @include opacity(amount of opacity);
     filter: alpha(opacity = $opacity-ie); //IE8
   }
 
-/*cebter a block element without having to worry if there is any top or bottom margin applied
+/* Shadow mixin
+usage: @include box-shadow(0, 0, 0, 4px, #000, inset);
+*/
+@mixin box-shadow($offset-x, $offset-y, $blur-radius, $spread-radius, $color, $inset: false) {
+    @if $inset {
+    box-shadow: inset $offset-x $offset-y $blur-radius $spread-radius $color;
+    }
+    @else {
+    box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
+    }
+}
+
+/*center a block element without having to worry if there is any top or bottom margin applied
 
 usage: @include push--auto*/ 
 
