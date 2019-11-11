@@ -41,6 +41,38 @@ usage: @include grid(columns,row, rowgap, colgap or gridgap);
     grid-gap: $gridgap;
 }
 
+/* padding mixin
+
+usage: @include padding(enter px);
+*/ 
+
+@mixin padding($values) {    
+    @each $var in $values {
+        padding: #{$var};
+    }
+}
+
+/*center a block element without having to worry if there is any top or bottom margin applied
+
+usage: @include push--auto*/ 
+
+@mixin push--auto {
+    margin: { 
+        left: auto;
+        right: auto;
+    }
+}
+
+/* absolute position centering
+*/
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /*a mixin for opacity
 usage: @include opacity(amount of opacity);
 */ 
@@ -63,19 +95,10 @@ usage: @include box-shadow(0, 0, 0, 4px, #000, inset);
     }
 }
 
-/*center a block element without having to worry if there is any top or bottom margin applied
-
-usage: @include push--auto*/ 
-
-@mixin push--auto {
-    margin: { 
-        left: auto;
-        right: auto;
-    }
-}
-
 /*giving dimensions to a box
+
 You must provide at least one parameter to make it work.
+
 usage: @include @box(amount of px you want to use);
 */ 
 
